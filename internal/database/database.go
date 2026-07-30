@@ -39,7 +39,7 @@ func parseDriver(dsn string) (string, error) {
 
 	switch {
 	case strings.HasPrefix(dsn, "postgres://"), strings.HasPrefix(dsn, "postgresql://"):
-		return "pgx", nil
+		return "postgres", nil
 	case strings.HasPrefix(dsn, "mysql://"):
 		return "mysql", nil
 	case strings.HasPrefix(dsn, "sqlite://"), strings.HasPrefix(dsn, "sqlite3://"),

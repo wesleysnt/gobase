@@ -13,8 +13,8 @@ func TestParseDriver(t *testing.T) {
 		driver  string
 		wantErr bool
 	}{
-		{"postgres://localhost:5432/db", "pgx", false},
-		{"postgresql://localhost:5432/db", "pgx", false},
+		{"postgres://localhost:5432/db", "postgres", false},
+		{"postgresql://localhost:5432/db", "postgres", false},
 		{"mysql://localhost:3306/db", "mysql", false},
 		{"sqlite://data.db", "sqlite3", false},
 		{"file:test.db", "sqlite3", false},
