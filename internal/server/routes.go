@@ -9,7 +9,7 @@ import (
 	"github.com/jmoiron/sqlx"
 
 	"github.com/you/gobase/internal/config"
-	// "github.com/you/gobase/internal/user"  // uncomment after Task 7
+	"github.com/you/gobase/internal/user"
 )
 
 func NewRouter(cfg *config.Config, db *sqlx.DB, log *slog.Logger) chi.Router {
@@ -27,7 +27,7 @@ func NewRouter(cfg *config.Config, db *sqlx.DB, log *slog.Logger) chi.Router {
 
 	// API v1 — domain routes registered here
 	r.Route("/api/v1", func(r chi.Router) {
-		// user.RegisterRoutes(r, db, cfg) — uncommented after Task 7
+		user.RegisterRoutes(r, db, cfg)
 	})
 
 	return r
