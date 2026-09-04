@@ -5,8 +5,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/database"
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/database"
 )
 
 var migrateUpCmd = &cobra.Command{

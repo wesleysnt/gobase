@@ -7,8 +7,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/you/gobase/internal/auth"
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/auth"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 var jwtGenerateCmd = &cobra.Command{

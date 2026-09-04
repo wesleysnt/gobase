@@ -6,13 +6,13 @@ echo "===================="
 echo ""
 
 # Prompt for new module path
-read -r -p "Module path (e.g., github.com/you/myproject): " MODULE_PATH
+read -r -p "Module path (e.g., github.com/wesleysnt/myproject): " MODULE_PATH
 if [ -z "$MODULE_PATH" ]; then
     echo "Error: Module path is required"
     exit 1
 fi
 
-OLD_MODULE="github.com/you/gobase"
+OLD_MODULE="github.com/wesleysnt/gobase"
 
 echo ""
 echo "Replacing module references..."

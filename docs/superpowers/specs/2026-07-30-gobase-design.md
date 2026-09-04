@@ -51,7 +51,7 @@ gobase/
 ├── .env.example             # Documented config template
 ├── setup.sh                 # Bootstrap: module rename, env copy, go mod tidy
 ├── Makefile                 # build, run, test, lint, migrate targets
-├── go.mod                   # Placeholder: github.com/you/gobase
+├── go.mod                   # Placeholder: github.com/wesleysnt/gobase
 └── main.go                  # Single entry point: cmd.Execute()
 ```
 
@@ -438,7 +438,7 @@ Done. Next: cd /path/to/newapp && make dev
 
 The script:
 1. Prompts for the new module path
-2. Replaces `github.com/you/gobase` with the new module across all `.go` files and `go.mod`
+2. Replaces `github.com/wesleysnt/gobase` with the new module across all `.go` files and `go.mod`
 3. Copies `.env.example` to `.env`
 4. Runs `go mod tidy` to verify
 5. Prints next steps

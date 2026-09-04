@@ -1,4 +1,4 @@
-module github.com/you/gobase
+module github.com/wesleysnt/gobase
 
 go 1.22
 

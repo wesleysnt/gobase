@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 func ListenAndServe(cfg *config.Config, log *slog.Logger, router http.Handler) error {

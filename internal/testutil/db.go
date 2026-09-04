@@ -6,8 +6,8 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/database"
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/database"
 )
 
 func SetupTestDB(t *testing.T) *sqlx.DB {

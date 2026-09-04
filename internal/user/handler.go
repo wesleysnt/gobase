@@ -7,9 +7,9 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/jmoiron/sqlx"
 
-	"github.com/you/gobase/internal/auth"
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/httputil"
+	"github.com/wesleysnt/gobase/internal/auth"
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/httputil"
 )
 
 type Handler struct {

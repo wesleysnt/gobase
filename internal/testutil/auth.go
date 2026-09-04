@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/you/gobase/internal/auth"
+	"github.com/wesleysnt/gobase/internal/auth"
 )
 
 func AuthHeader(t *testing.T, userID string) string {

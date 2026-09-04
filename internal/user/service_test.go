@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/you/gobase/internal/httputil"
+	"github.com/wesleysnt/gobase/internal/httputil"
 )
 
 type stubUserRepo struct {

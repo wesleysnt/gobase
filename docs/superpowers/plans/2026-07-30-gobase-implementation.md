@@ -4,13 +4,13 @@
 
 **Goal:** Build a batteries-included Go project template with cobra CLI, chi HTTP API, sqlx database access, golang-migrate migrations, HMAC JWT auth, and slog structured logging.
 
-**Architecture:** Single binary with cobra subcommands (serve, migrate, jwt). chi router assembled in `internal/server/`. Each domain (starting with `user/`) is a vertical slice under `internal/` containing model, repository, service, and handler. Infrastructure packages (config, log, database, auth) are shared. Module placeholder is `github.com/you/gobase`, replaced at clone time by `setup.sh`.
+**Architecture:** Single binary with cobra subcommands (serve, migrate, jwt). chi router assembled in `internal/server/`. Each domain (starting with `user/`) is a vertical slice under `internal/` containing model, repository, service, and handler. Infrastructure packages (config, log, database, auth) are shared. Module placeholder is `github.com/wesleysnt/gobase`, replaced at clone time by `setup.sh`.
 
 **Tech Stack:** Go 1.22+, chi v5, cobra v1.8, sqlx v1.3, golang-migrate v4, golang-jwt v5, go-playground/validator v10, godotenv v1.5
 
 ## Global Constraints
 
-- Module path: `github.com/you/gobase` (placeholder, replaced by setup.sh)
+- Module path: `github.com/wesleysnt/gobase` (placeholder, replaced by setup.sh)
 - Go version: 1.22 minimum
 - All application code under `internal/`
 - Package naming: singular (`user`, not `users`)
@@ -29,17 +29,17 @@
 - Create: `main.go`
 
 **Interfaces:**
-- Produces: module `github.com/you/gobase` with Go 1.22, entry point `main.go` calling `cmd.Execute()`
+- Produces: module `github.com/wesleysnt/gobase` with Go 1.22, entry point `main.go` calling `cmd.Execute()`
 
 - [ ] **Step 1: Initialize go.mod**
 
 ```bash
 cd /Users/wesleysnt/Documents/GitHub/gobase
-go mod init github.com/you/gobase
+go mod init github.com/wesleysnt/gobase
 ```
 
-Run: `go mod init github.com/you/gobase`
-Expected: creates `go.mod` with `module github.com/you/gobase` and `go 1.22` (or current installed version)
+Run: `go mod init github.com/wesleysnt/gobase`
+Expected: creates `go.mod` with `module github.com/wesleysnt/gobase` and `go 1.22` (or current installed version)
 
 - [ ] **Step 2: Write main.go**
 
@@ -47,7 +47,7 @@ Expected: creates `go.mod` with `module github.com/you/gobase` and `go 1.22` (or
 // main.go
 package main
 
-import "github.com/you/gobase/cmd"
+import "github.com/wesleysnt/gobase/cmd"
 
 func main() {
 	cmd.Execute()
@@ -57,7 +57,7 @@ func main() {
 - [ ] **Step 3: Verify main.go compiles (will fail on missing cmd package — expected)**
 
 Run: `go build .`
-Expected: FAIL — `package github.com/you/gobase/cmd is not in GOROOT`
+Expected: FAIL — `package github.com/wesleysnt/gobase/cmd is not in GOROOT`
 
 - [ ] **Step 4: Commit**
 
@@ -351,7 +351,7 @@ import (
 	"testing"
 	"testing/slog"
 
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 func TestNewTextFormat(t *testing.T) {
@@ -443,7 +443,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 func New(cfg *config.Config) *slog.Logger {
@@ -519,7 +519,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 func TestParseDriver(t *testing.T) {
@@ -602,7 +602,7 @@ import (
 	"time"
 
 	"github.com/jmoiron/sqlx"
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 
 	_ "github.com/lib/pq"
 )
@@ -1434,7 +1434,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/jmoiron/sqlx"
 
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 func NewRouter(cfg *config.Config, db *sqlx.DB, log *slog.Logger) chi.Router {
@@ -1475,7 +1475,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 func ListenAndServe(cfg *config.Config, log *slog.Logger, router http.Handler) error {
@@ -1564,7 +1564,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/you/gobase/internal/server"
+	"github.com/wesleysnt/gobase/internal/server"
 )
 
 type stubUserRepo struct {
@@ -1753,7 +1753,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
-	"github.com/you/gobase/internal/server"
+	"github.com/wesleysnt/gobase/internal/server"
 )
 
 type UserRepo struct {
@@ -1820,7 +1820,7 @@ import (
 
 	"github.com/go-playground/validator/v10"
 
-	"github.com/you/gobase/internal/server"
+	"github.com/wesleysnt/gobase/internal/server"
 )
 
 var validate = validator.New()
@@ -1913,9 +1913,9 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/jmoiron/sqlx"
 
-	"github.com/you/gobase/internal/auth"
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/server"
+	"github.com/wesleysnt/gobase/internal/auth"
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/server"
 )
 
 type Handler struct {
@@ -2222,8 +2222,8 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/jmoiron/sqlx"
 
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/user"  // add this
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/user"  // add this
 )
 ```
 
@@ -2252,7 +2252,7 @@ import (
 
 	"github.com/go-playground/validator/v10"
 
-	"github.com/you/gobase/internal/server"
+	"github.com/wesleysnt/gobase/internal/server"
 )
 
 var validate = validator.New()
@@ -2351,10 +2351,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/database"
-	"github.com/you/gobase/internal/log"
-	"github.com/you/gobase/internal/server"
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/database"
+	"github.com/wesleysnt/gobase/internal/log"
+	"github.com/wesleysnt/gobase/internal/server"
 )
 
 var serveCmd = &cobra.Command{
@@ -2406,8 +2406,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/database"
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/database"
 )
 
 var migrateUpCmd = &cobra.Command{
@@ -2645,8 +2645,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/you/gobase/internal/auth"
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/auth"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 var jwtGenerateCmd = &cobra.Command{
@@ -2834,13 +2834,13 @@ echo "===================="
 echo ""
 
 # Prompt for new module path
-read -r -p "Module path (e.g., github.com/you/myproject): " MODULE_PATH
+read -r -p "Module path (e.g., github.com/wesleysnt/myproject): " MODULE_PATH
 if [ -z "$MODULE_PATH" ]; then
     echo "Error: Module path is required"
     exit 1
 fi
 
-OLD_MODULE="github.com/you/gobase"
+OLD_MODULE="github.com/wesleysnt/gobase"
 
 echo ""
 echo "Replacing module references..."
@@ -2905,8 +2905,8 @@ Expected: replaces module references, copies .env, runs go mod tidy
 Then restore the original module name:
 ```bash
 # Replace back to original for the template
-find . -name "*.go" -type f -exec sed -i '' 's|github.com/test/demo|github.com/you/gobase|g' {} +
-sed -i '' 's|github.com/test/demo|github.com/you/gobase|g' go.mod
+find . -name "*.go" -type f -exec sed -i '' 's|github.com/test/demo|github.com/wesleysnt/gobase|g' {} +
+sed -i '' 's|github.com/test/demo|github.com/wesleysnt/gobase|g' go.mod
 go mod tidy
 ```
 
@@ -2951,8 +2951,8 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/database"
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/database"
 )
 
 func SetupTestDB(t *testing.T) *sqlx.DB {
@@ -3003,7 +3003,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/you/gobase/internal/auth"
+	"github.com/wesleysnt/gobase/internal/auth"
 )
 
 func AuthHeader(t *testing.T, userID string) string {
@@ -3135,7 +3135,7 @@ rm migrations/*test_migration*
 
 ```bash
 # Test with a dry run to verify it doesn't break
-grep -r "github.com/you/gobase" --include="*.go" | head -5
+grep -r "github.com/wesleysnt/gobase" --include="*.go" | head -5
 ```
 
 Expected: shows files with the placeholder module path

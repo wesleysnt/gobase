@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/jmoiron/sqlx"
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 
 	_ "github.com/lib/pq"
 )

@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 func TestParseDriver(t *testing.T) {
@@ -48,7 +48,7 @@ func TestConnectUnreachable(t *testing.T) {
 	}
 
 	cfg := &config.Config{
-		DatabaseURL:      "postgres://localhost:59999/nonexistent",
+		DatabaseURL:       "postgres://localhost:59999/nonexistent",
 		DBMaxOpenConns:    1,
 		DBMaxIdleConns:    1,
 		DBConnMaxLifetime: 1,

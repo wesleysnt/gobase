@@ -6,7 +6,7 @@ import (
 
 	"log/slog"
 
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 func TestNewTextFormat(t *testing.T) {

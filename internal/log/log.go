@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/you/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/config"
 )
 
 func New(cfg *config.Config) *slog.Logger {

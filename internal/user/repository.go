@@ -7,7 +7,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
-	"github.com/you/gobase/internal/httputil"
+	"github.com/wesleysnt/gobase/internal/httputil"
 )
 
 type UserRepo struct {

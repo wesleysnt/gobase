@@ -5,10 +5,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/database"
-	"github.com/you/gobase/internal/log"
-	"github.com/you/gobase/internal/server"
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/database"
+	"github.com/wesleysnt/gobase/internal/log"
+	"github.com/wesleysnt/gobase/internal/server"
 )
 
 var serveCmd = &cobra.Command{

@@ -8,8 +8,8 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/jmoiron/sqlx"
 
-	"github.com/you/gobase/internal/config"
-	"github.com/you/gobase/internal/user"
+	"github.com/wesleysnt/gobase/internal/config"
+	"github.com/wesleysnt/gobase/internal/user"
 )
 
 func NewRouter(cfg *config.Config, db *sqlx.DB, log *slog.Logger) chi.Router {
